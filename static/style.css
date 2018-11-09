@@ -91,30 +91,19 @@ body {
     background: #00C397;
 }
 
-.landscape--container {
+.index-container--bottom {
     display: flex;
     flex-direction: row;
-    background: red;
-    /*align-self: flex-end;*/
     margin-top: auto;
+    justify-content: space-between;
 }
 
 .landscape--forest {
-    /*max-height: 10%;*/
-    height: 100px;
-    /*align-self: flex-end;*/
-    /*margin-top: auto*/
-    /*margin-top: auto;*/
-    /*margin-bottom: auto;*/
-   /*display: flex;*/
-  /*flex-direction: column;*/
-   /*margin:auto;*/
-   /*display:block;*/
+    height: 200px;
+    margin-left: 100px;
 }
 
 .landscape--park {
-    height: auto; 
-    width: auto; 
-    max-width: 200px; 
-    max-height: 200px;
+    height: 200px;
+    margin-right: 100px;
 }
