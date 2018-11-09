@@ -1,53 +1,58 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <title>ENGL080</title>
     <!-- Styling -->
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900" rel="stylesheet">
-  </head>
-  <body>
-  	<div class="index-container">
-      <div class="index-container--top">
-        <!-- Header -->
-        <div class="index-header--container">
-          <!-- Title -->
-          <div class="index-title--container">
-            <div class="index-title--text">
-              Disinformation
+</head>
+
+<body>
+    <!-- Site -->
+    <div class="index-container">
+        <div class="index-container--top">
+            <!-- Header -->
+            <div class="index-header--container">
+                <!-- Title -->
+                <div class="index-title--container">
+                    <div class="index-title--text">
+                        Disinformation
+                    </div>
+                </div>
+                <!-- Links -->
+                <div class="index-links--container">
+                    <div class="index-links--text">
+                        Play
+                    </div>
+                    <div class="index-links--text">
+                        About
+                    </div>
+                </div>
             </div>
-          </div>
-          <!-- Links -->
-          <div class="index-links--container">
-            <div class="index-links--text">
-              Play
+            <!-- Main -->
+            <div class="index-main--container">
+                <div class="index-center--container">
+                    <div class="index-center--title">
+                        Disinformation
+                    </div>
+                    <div class="index-center--subtitle">
+                        Test your ability to detect fake news headlines.
+                    </div>
+                    <div class="index-center--button-container">
+                        <div class="index-center--button left">Play</div>
+                        <div class="index-center--button right">About</div>
+                    </div>
+                </div>
             </div>
-            <div class="index-links--text">
-              About
-            </div>
-          </div>
         </div>
-        <!-- Main -->
-        <div class="index-main--container">
-          <div class="index-center--container">
-            <div class="index-center--title">
-              Disinformation
-            </div>
-            <div class="index-center--subtitle">
-              Test your ability to detect fake news headlines.
-            </div>
-            <div class="index-center--button-container">
-              <div class="index-center--button left">Play</div>
-              <div class="index-center--button right">About</div>
-            </div>
-          </div>
+        <!-- Bottom -->
+        <div class="index-container--bottom">
+            <object class="clipart left" data="{{ url_for('static',filename='trees.svg') }}" type="image/svg+xml"></object>
+            <object class="clipart right" data="{{ url_for('static',filename='park.svg') }}" type="image/svg+xml"></object>
         </div>
-      </div>
-      <div class="index-container--bottom">
-        <object class="clipart left" data="{{ url_for('static',filename='trees.svg') }}" type="image/svg+xml"></object>
-        <object class="clipart right" data="{{ url_for('static',filename='park.svg') }}" type="image/svg+xml"></object>
-      </div>
-  	</div>
-  </body>
+    </div>
+</body>
+
 </html>

@@ -98,12 +98,50 @@ body {
     justify-content: space-between;
 }
 
-.landscape--forest {
+.clipart {
+    height: 200px;
+}
+
+.clipart.left {
     height: 200px;
     margin-left: 100px;
 }
 
-.landscape--park {
+.clipart.right {
     height: 200px;
     margin-right: 100px;
+}
+
+.headline--container {
+    height: auto;
+    min-height: 100px;
+    width: 550px;
+    max-width: 550px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    border-radius: 5px;
+    background: #FFFFFF;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.headline--title {
+    text-transform: capitalize;
+    font-size: 24px;
+}
+
+.headline--bottom {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0 0 0;
+}
+
+.headline--meta {
+    display: flex;
+    flex-direction: column;
+}
+
+.headline--date {
+    color: #888888;
 }
