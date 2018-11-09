@@ -1,5 +1,15 @@
 body {
-    background: #1FA2FF;
+    background: #F5F5F5
+    font-family: 'Lusitana', serif;
+    /*background: #1FA2FF;
     background: -webkit-linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF);
-    background: linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF);
+    background: linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF);*/
+}
+
+.index-container {
+    display: flex;
+}
+
+.index-title {
+    font-variant: small-caps;
 }
