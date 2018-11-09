@@ -6,7 +6,7 @@ body {
     /* sizing */
     min-height: 100vh;
     margin: 0 auto;
-    /*overflow: hidden;*/
+    overflow: hidden;
     /* font */
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
@@ -25,7 +25,7 @@ body {
 }
 
 .index-container--top {
-    padding: 15px;
+    padding: 20px;
 }
 
 .index-header--container {
