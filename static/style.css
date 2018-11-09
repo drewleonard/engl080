@@ -1,15 +1,32 @@
+html {
+    height: 100%;
+}
+
 body {
-    background: #F5F5F5
-    font-family: 'Lusitana', serif;
-    /*background: #1FA2FF;
-    background: -webkit-linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF);
-    background: linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF);*/
+    /* sizing */
+    height: 100%;
+    padding: 15px;
+    overflow: hidden;
+    /* font */
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    /* background color */
+    background: #1FA2FF;
+    background: -webkit-linear-gradient(to bottom, #AAEBFF, #ffffff);
+    background: linear-gradient(to bottom, #AAEBFF, #ffffff);
+
 }
 
 .index-container {
     display: flex;
 }
 
-.index-title {
+.index-title--container {
+    align-self: center;
+}
+
+.index-title--text {
+    font-size: 32px;
     font-variant: small-caps;
+    font-weight: 700;
 }
