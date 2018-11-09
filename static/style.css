@@ -28,15 +28,38 @@ body {
 }
 
 .index-title--container {
-    align-self: flex-end;;
+    align-self: flex-end;
 }
 
 .index-title--text {
     font-size: 32px;
     font-variant: small-caps;
-    font-weight: 700;
+    font-weight: 900;
 }
 
 .index-links--container {
+    display: flex;
+    flex-direction: row;
+    margin: 0 20px 0 0;
+}
+
+.index-links--text {
     align-self: flex-end;
+    margin: 0 20px 0 20px;
+}
+
+.index-main--container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.index-center--container {
+    margin: 25vh 0 0 0;
+}
+
+.index-center--title {
+    font-variant: small-caps;
+    font-weight: 900;
+    font-size: 48px;
 }
