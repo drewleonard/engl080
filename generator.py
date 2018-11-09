@@ -1,10 +1,9 @@
 import random
 import spacy
 
-
 class Generator(object):
 
-    def __init__(self, headlines, threshold_entity, threshold_chunk):
+    def __init__(self, headlines, threshold_entity=0, threshold_chunk=0):
 
         self.headlines = headlines
         self.threshold_entity = threshold_entity
@@ -13,16 +12,17 @@ class Generator(object):
         self.map_chunk = None
 
         self.nlp = spacy.load('en')
+        self._set_maps()
 
     def _get_attributes(self, doc):
 
         entities = [
             entity for entity in doc.ents
-            if len(self.nlp(e.text)) > self.entity_threshold
+            if len(self.nlp(entity.text)) > self.threshold_entity
         ]
         chunks = [
             chunk for chunk in doc.noun_chunks
-            if len(self.nlp(chunk.text)) > self.chunk_threshold
+            if len(self.nlp(chunk.text)) > self.threshold_chunk
         ]
 
         return entities, chunks
@@ -31,13 +31,17 @@ class Generator(object):
         if k not in kv_map:
             kv_map[k] = set()
         kv_map[k].add(v)
+        return
 
     def _decode_text(self, text):
+
         if not isinstance(text, unicode):
             text = text.decode('utf-8')
+
         return text
 
     def _sample_map(self, kv_map, k):
+
         return random.sample(kv_map[k],1)[0]
 
     def _set_maps(self):
