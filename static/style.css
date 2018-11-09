@@ -134,12 +134,13 @@ body {
 .headline--bottom {
     display: flex;
     flex-direction: row;
-    margin: 10px 0 0 0;
+    margin: 20px 0 0 0;
 }
 
 .headline--meta {
     display: flex;
     flex-direction: column;
+    font-size: 16px;
 }
 
 .headline--date {
