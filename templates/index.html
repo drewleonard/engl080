@@ -8,31 +8,47 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900" rel="stylesheet">
   </head>
   <body>
+    
   	<div class="index-container">
-  		<!-- Header -->
-  		<div class="index-header--container">
-        <!-- Title -->
-  			<div class="index-title--container">
-	  			<div class="index-title--text">
-		  			Disinformation
-		  		</div>
-	  		</div>
-        <!-- Links -->
-        <div class="index-links--container">
-          <div class="index-links--text">
-            About
+      <div class="index-container--top">
+        <!-- Header -->
+        <div class="index-header--container">
+          <!-- Title -->
+          <div class="index-title--container">
+            <div class="index-title--text">
+              Disinformation
+            </div>
           </div>
-          <div class="index-links--text">
-            Play
+          <!-- Links -->
+          <div class="index-links--container">
+            <div class="index-links--text">
+              About
+            </div>
+            <div class="index-links--text">
+              Play
+            </div>
           </div>
         </div>
-		  </div>
-      <!-- Main -->
-      <div class="index-main--container">
-        <div class="index-center--container">
-          <div class="index-center--title">Disinformation</div>
-          <div class="index-center--subtitle"></div>
+        <!-- Main -->
+        <div class="index-main--container">
+          <div class="index-center--container">
+            <div class="index-center--title">
+              Disinformation
+            </div>
+            <div class="index-center--subtitle">
+              Test your ability to detect fake news headlines.
+            </div>
+            <div class="index-center--button-container">
+              <div class="index-center--button left">Play</div>
+              <div class="index-center--button right">About</div>
+            </div>
+          </div>
         </div>
+      </div>
+
+      <div class="landscape--container">
+        <object class="landscape--forest" data="{{ url_for('static',filename='park.svg') }}" type="image/svg+xml"></object>
+        <!-- <img class="landscape--park" src="{{ url_for('static',filename='park.svg') }}"/> -->
       </div>
   	</div>
   </body>

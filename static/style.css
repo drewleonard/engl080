@@ -1,25 +1,31 @@
 html {
-    height: 100%;
+    height: 100vh;
 }
 
 body {
     /* sizing */
-    height: 100%;
-    padding: 15px;
-    overflow: hidden;
+    min-height: 100vh;
+    margin: 0 auto;
+    /*overflow: hidden;*/
     /* font */
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
+    color: #211437;
     /* background color */
     background: #1FA2FF;
     background: -webkit-linear-gradient(to bottom, #AAEBFF, #ffffff);
     background: linear-gradient(to bottom, #AAEBFF, #ffffff);
-
 }
 
 .index-container {
     display: flex;
     flex-direction: column;
+    height: 100vh;
+    padding: 0 0 0 0;
+}
+
+.index-container--top {
+    padding: 15px;
 }
 
 .index-header--container {
@@ -61,5 +67,54 @@ body {
 .index-center--title {
     font-variant: small-caps;
     font-weight: 900;
-    font-size: 48px;
+    font-size: 72px;
+}
+
+.index-center--button-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.index-center--button {
+    background: #1FA2FF;
+    padding: 20px 60px 20px 60px;
+    margin: 60px 20px 0 0;
+    border-radius: 5px;
+    color: white;
+}
+
+.index-center--button.left {
+    background: #211437;
+}
+
+.index-center--button.right {
+    background: #00C397;
+}
+
+.landscape--container {
+    display: flex;
+    flex-direction: row;
+    background: red;
+    /*align-self: flex-end;*/
+    margin-top: auto;
+}
+
+.landscape--forest {
+    /*max-height: 10%;*/
+    height: 100px;
+    /*align-self: flex-end;*/
+    /*margin-top: auto*/
+    /*margin-top: auto;*/
+    /*margin-bottom: auto;*/
+   /*display: flex;*/
+  /*flex-direction: column;*/
+   /*margin:auto;*/
+   /*display:block;*/
+}
+
+.landscape--park {
+    height: auto; 
+    width: auto; 
+    max-width: 200px; 
+    max-height: 200px;
 }
