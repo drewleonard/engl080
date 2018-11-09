@@ -19,14 +19,24 @@ body {
 
 .index-container {
     display: flex;
+    flex-direction: column;
+}
+
+.index-header--container {
+    display: flex;
+    justify-content: space-between;
 }
 
 .index-title--container {
-    align-self: center;
+    align-self: flex-end;;
 }
 
 .index-title--text {
     font-size: 32px;
     font-variant: small-caps;
     font-weight: 700;
+}
+
+.index-links--container {
+    align-self: flex-end;
 }
