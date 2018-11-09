@@ -10,14 +10,6 @@ class Corpus(object):
         self._set_corpus()
 
     def _set_corpus(self):
-        """Sets corpus.
-        
-        Sets corpus from supplied path.
-        :raises: Exception unvailable corpus
-        """
-        # Raise exception for unavailable corpus from path
-        # if not self.path or not os.path.isfile(self.path):
-        #     raise Exception("Path is incompatible.")
 
         # Read corpus into object
         with open(self.path, 'rb') as f:
@@ -41,6 +33,4 @@ class Corpus(object):
             if 'document' not in headlines and 'span' not in headlines
         ] for text in self.corpus[source]] for part in full]
 
-c = Corpus(path="/Users/drewnleonard/Documents/engl80/final_project/static/corpus_small.p")
-c.set_headlines('breitbart.dill')
-print(c.headlines[:10])
+        return
