@@ -17,7 +17,7 @@ class Corpus(object):
 
         return
 
-    def set_headlines(self, source):
+    def set_headlines(self, source, threshold):
 
         # Raise exception for unavailable corpus from object
         if not self.corpus:
@@ -31,6 +31,6 @@ class Corpus(object):
         self.headlines = [part for full in [[
             headlines for headlines in self.corpus[source][text]
             if 'document' not in headlines and 'span' not in headlines
-        ] for text in self.corpus[source]] for part in full]
+        ] for text in self.corpus[source]] for part in full][:threshold]
 
         return

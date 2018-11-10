@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 import corpus
 import generator
+import game
 
 app = Flask(__name__)
 
@@ -11,15 +12,30 @@ def index():
 @app.route('/play/')
 def play():
 
-	source_headlines = "nyt.dill"
+	# Set seed headlines for game
+	seed_headlines = [
+        "Leah Vukmir: Trump is bringing people together",
+        "Alaska Catholic official orders sexual misconduct review",
+        'Florida middle school girls plotted to kill up to 15 students, drink their blood, police say',
+        "Tucker Carlson: Cable news geniuses, it's not poor peasants from Central America we're afraid of. It's you",
+        "Republican Katie Arrington on contentious South Carolina race",
+        "McSally on how border security impacts Arizona Senate race",
+        "Crime, extreme poverty in El Salvador driving migration",
+        "Pakistan gets $6 billion from Saudis, still needs IMF loan"
+    ]
+
+    # Set corpus headline source, options are:
+	# nyt, breitbart, cnn, fox, buzzfeed
+	corpus_headlines = "breitbart.dill"
 
 	# Load corpus object into memory and set headlines
 	corpus_obj = corpus.Corpus(path='corpus_small.p')
-	corpus_obj.set_headlines(source_headlines)
+	corpus_obj.set_headlines(corpus_headlines, 1000)
 
 	# Load generator object into memory
-	generator_obj = generator.Generator(corpus_obj.headlines[:100])
-	print(generator_obj.map_entity)
-	print(generator_obj.map_chunk)
+	generator_obj = generator.Generator(corpus_obj.headlines, seed_headlines)
+
+	# Load game object into memory
+	game_obj = game.Game(generator_obj, seed_headlines)
 
 	return render_template('play.html')
