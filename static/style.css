@@ -76,7 +76,6 @@ body {
 }
 
 .index-center--button {
-    background: #1FA2FF;
     padding: 20px 60px 20px 60px;
     margin: 60px 20px 0 0;
     border-radius: 5px;
@@ -145,4 +144,25 @@ body {
 
 .headline--date {
     color: #888888;
+}
+
+.answer--container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.answer--button {
+    padding: 20px 60px 20px 60px;
+    margin: 60px 0 0 0;
+    border-radius: 5px;
+    color: white;
+}
+
+.answer--button.left {
+    background: #211437;
+}
+
+.answer--button.right {
+    background: #00C397;
 }
