@@ -13,7 +13,7 @@ def index():
 @app.route('/play/')
 def play():
 
-	# # Set seed headlines for game
+	# Set seed headlines for game
 	# seed_headlines = [
  #        "Leah Vukmir: Trump is bringing people together",
  #        "Alaska Catholic official orders sexual misconduct review",
@@ -30,7 +30,7 @@ def play():
 
 	# # Load corpus object into memory and set headlines
 	# corpus_obj = corpus.Corpus(path='corpus_small.p')
-	# corpus_obj.set_headlines(corpus_headlines, 20)
+	# corpus_obj.set_headlines(corpus_headlines, 200)
 
 	# # Load generator object into memory
 	# generator_obj = generator.Generator(corpus_obj.headlines, seed_headlines)

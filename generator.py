@@ -86,6 +86,9 @@ class Generator(object):
         if self.map_chunk is None or self.map_entity is None:
             raise Exception("Unavailable maps for generating headline.")
 
+        # Array for replacements
+        replacements = []
+
         # Decode text
         text = self._decode_text(text)
 
@@ -99,14 +102,24 @@ class Generator(object):
         if replace_entity:
             for entity in entities:
                 if entity.label_ in self.map_entity:
+
+                    # Get and store replacement
                     replacement = self._sample_map(self.map_entity, entity.label_)
+                    replacements.append(replacement)
+
+                    # Replace text
                     text = text.replace(entity.text, replacement)
 
         # Replace chunks
         if replace_chunk:
             for chunk in chunks:
                 if chunk.root.dep_ in self.map_chunk:
+
+                    # Get and store replacement
                     replacement = self._sample_map(self.map_chunk, chunk.root.dep_)
+                    replacements.append(replacement)
+
+                    # Replace text
                     text = text.replace(chunk.text, replacement)
 
-        return text
+        return (text, replacements)

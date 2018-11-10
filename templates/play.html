@@ -35,6 +35,9 @@
             <!-- Main -->
             <div class="index-main--container">
                 <div class="index-center--container">
+                    <!-- Reveal container -->
+                    <div class="reveal--container">Incorrect.</div>
+                    <!-- Headline container -->
                     <div class="headline--container">
                         <div class="headline--title">
                             California May Soon Unravel Controversial Nets Used To Harvest Swordfish
@@ -50,6 +53,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Answer container -->
                     <div class="answer--container">
                       <div class="button--primary left">Fake</div>
                       <div class="button--primary right">Real</div>
@@ -66,7 +70,7 @@
         "answer": false
       }
 
-      function answer(choice) {
+      function selectAnswer(choice) {
         if (choice == curr_headline.answer) {
           console.log('YES. Your answer is correct.')
         } else {
@@ -74,10 +78,20 @@
         }
       }
 
-      answer(false)
+      function revealAnswer(chioce) {
+
+        var answer = choice;
+
+        // Create new div for answer
+        var $answer = $("<div/>")
+            .addClass("reveal--box")
+            .html("<b>Correct!</b> This headline is ...")
+
+
+      }
 
       // var inputs = {{ inputs | safe }}
-      // console.log(inputs);
+
     </script>
 </body>
 
