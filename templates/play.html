@@ -7,7 +7,8 @@
     <!-- Styling -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900" rel="stylesheet">
-    <!-- JavaScript -->
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -36,7 +37,7 @@
             <div class="index-main--container">
                 <div class="index-center--container">
                     <!-- Reveal container -->
-                    <div class="reveal--container">Incorrect.</div>
+                    <div class="reveal--container" id="reveal--container"></div>
                     <!-- Headline container -->
                     <div class="headline--container">
                         <div class="headline--title">
@@ -55,58 +56,44 @@
                     </div>
                     <!-- Answer container -->
                     <div class="answer--container">
-                      <div class="button--primary left">Fake</div>
-                      <div class="button--primary right">Real</div>
+                        <div class="button--primary left">Fake</div>
+                        <div class="button--primary right">Real</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <script type="text/javascript">
-      
-      // Global variables for keeping state
-      var curr_headline = {
-        "text": "California May Soon Unravel Controversial Nets Used To Harvest Swordfish",
-        "answer": false
-      }
 
-      function selectAnswer(choice) {
-
-        // Correct guess, real headline
-        if (choice == curr_headline.answer && curr_headline.answer == true) {
-            revealAnswer(true, true)
-        } 
-
-        // Correct guess, false headline
-        else if (choice == curr_headline.answer && curr_headline.answer == false) {
-            revealAnswer(true, false)
+        // Global variables for keeping state
+        var curr_headline = {
+            "text": "California May Soon Unravel Controversial Nets Used To Harvest Swordfish",
+            "answer": false
         }
 
-        // Incorrect guess, real headline
-        else if (choice != curr_headline.answer && curr_headline.answer == true) {
-            revealAnswer(false, true)
+        function selectAnswer(choice) {
+
+            // 1. Reveal answer
+            // 2. Sleep
+            // 3. Change headline && remove answer
+
         }
 
-        // Incorrect guess, false headline
-        else if (choice != curr_headline.answer && curr_headline.answer == false) {
-            revealAnswer(false, false)
+        function revealAnswer(choice) {
+
+            var thisChoice = (choice == curr_headline.answer) ? "Correct" : "Incorrect";
+            var thisAnswer = (curr_headline.answer == true) ? "real" : "fake";
+
+            // Get and edit reveal DIV
+            $("#reveal--container")
+                .css('visibility', 'visible')
+                .html(`<b>${thisChoice}!</b>&nbsp;This headline is ${thisAnswer}.`);
+
         }
 
-      }
+        revealAnswer(false);
 
-      function revealAnswer(choice) {
-
-        var answer = choice;
-
-        // Create new div for answer
-        var $answer = $("<div/>")
-            .addClass("reveal--box")
-            .html("<b>Correct!</b> This headline is ...")
-
-      }
-
-      // var inputs = {{ inputs | safe }}
-
+        // var inputs = {{ inputs | safe }}
     </script>
 </body>
 
