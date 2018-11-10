@@ -71,14 +71,30 @@
       }
 
       function selectAnswer(choice) {
-        if (choice == curr_headline.answer) {
-          console.log('YES. Your answer is correct.')
-        } else {
-          console.log('NO. Your answer is incorrect.')
+
+        // Correct guess, real headline
+        if (choice == curr_headline.answer && curr_headline.answer == true) {
+            revealAnswer(true, true)
+        } 
+
+        // Correct guess, false headline
+        else if (choice == curr_headline.answer && curr_headline.answer == false) {
+            revealAnswer(true, false)
         }
+
+        // Incorrect guess, real headline
+        else if (choice != curr_headline.answer && curr_headline.answer == true) {
+            revealAnswer(false, true)
+        }
+
+        // Incorrect guess, false headline
+        else if (choice != curr_headline.answer && curr_headline.answer == false) {
+            revealAnswer(false, false)
+        }
+
       }
 
-      function revealAnswer(chioce) {
+      function revealAnswer(choice) {
 
         var answer = choice;
 
@@ -86,7 +102,6 @@
         var $answer = $("<div/>")
             .addClass("reveal--box")
             .html("<b>Correct!</b> This headline is ...")
-
 
       }
 

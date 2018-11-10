@@ -31,7 +31,7 @@ class Game(object):
 
 			# Generate false headline if True
 			# Keep original headline if False
-			seed_headline, replacements = self.generator_obj.get_headline(seed_headline) if choice else (seed_headline, None)
+			seed_headline, replacements = self.generator_obj.get_headline(seed_headline) if not choice else (seed_headline, None)
 
 			# Serialize and store randomized seed headline in inputs
 			self.inputs.append([choice,seed_headline,replacements])
