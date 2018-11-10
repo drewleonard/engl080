@@ -7,10 +7,11 @@
     <!-- Styling -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900" rel="stylesheet">
+    <!-- JavaScript -->
 </head>
 
 <body>
-    <!-- Site -->
+    <!-- Site container -->
     <div class="index-container">
         <div class="index-container--top">
             <!-- Header -->
@@ -53,6 +54,10 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+      var inputs = {{ inputs | safe }}
+      console.log(inputs);
+    </script>
 </body>
 
 </html>

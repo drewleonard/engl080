@@ -1,4 +1,5 @@
 import random
+import json
 
 class Game(object):
 
@@ -16,14 +17,14 @@ class Game(object):
 	def _set_inputs(self):
 		
 		# Raise exception for unavailable source data
-		if not self.corpus_obj or not self.seed_headlines:
+		if not self.generator_obj or not self.seed_headlines:
 			raise Exception("Unavailable source data.")
 
 		# Initialize array for inputs
 		self.inputs = []
 
 		# Iterate over seed headlines
-		for seed_headline in seed_headlines:
+		for seed_headline in self.seed_headlines:
 			
 			# Get choice value
 			choice = self._get_choice()
@@ -32,8 +33,11 @@ class Game(object):
 			# Keep original headline if False
 			seed_headline = self.generator_obj.get_headline(seed_headline) if choice else seed_headline
 
+			# Decode to ascii
+			# seed_headline = seed_headline.encode('ascii','ignore')
+
 			# Store randomized seed headline in inputs
-			self.inputs.append((choice,seed_headline))
+			self.inputs.append([choice,json.dumps(seed_headline)])
 
 		return
 

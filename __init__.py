@@ -38,4 +38,4 @@ def play():
 	# Load game object into memory
 	game_obj = game.Game(generator_obj, seed_headlines)
 
-	return render_template('play.html')
+	return render_template('play.html', inputs=game_obj.inputs)

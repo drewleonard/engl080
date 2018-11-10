@@ -83,7 +83,7 @@ class Generator(object):
     def get_headline(self, text, replace_entity=True, replace_chunk=True):
 
         # Raise exception for unavailable maps
-        if not self.map_chunk or not self.map_entity:
+        if self.map_chunk is None or self.map_entity is None:
             raise Exception("Unavailable maps for generating headline.")
 
         # Decode text
