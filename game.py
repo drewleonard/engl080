@@ -36,8 +36,8 @@ class Game(object):
 			# Decode to ascii
 			# seed_headline = seed_headline.encode('ascii','ignore')
 
-			# Store randomized seed headline in inputs
-			self.inputs.append([choice,json.dumps(seed_headline)])
+			# Serialize and store randomized seed headline in inputs
+			self.inputs.append([json.dumps(str(choice)),json.dumps(seed_headline)])
 
 		return
 
