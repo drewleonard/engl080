@@ -13,8 +13,8 @@ body {
     color: #211437;
     /* background color */
     background: #1FA2FF;
-    background: -webkit-linear-gradient(to bottom, #AAEBFF, #ffffff);
-    background: linear-gradient(to bottom, #AAEBFF, #ffffff);
+    background: -webkit-linear-gradient(to bottom, #AAEBFF, #F6F9FC);
+    background: linear-gradient(to bottom, #AAEBFF, #F6F9FC);
 }
 
 .index-container {
@@ -73,21 +73,6 @@ body {
 .index-center--button-container {
     display: flex;
     flex-direction: row;
-}
-
-.index-center--button {
-    padding: 20px 60px 20px 60px;
-    margin: 60px 20px 0 0;
-    border-radius: 5px;
-    color: white;
-}
-
-.index-center--button.left {
-    background: #211437;
-}
-
-.index-center--button.right {
-    background: #00C397;
 }
 
 .index-container--bottom {
@@ -152,17 +137,28 @@ body {
     justify-content: space-between;
 }
 
-.answer--button {
+.button--primary {
     padding: 20px 60px 20px 60px;
     margin: 60px 0 0 0;
     border-radius: 5px;
     color: white;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
-.answer--button.left {
+.button--primary:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.button--primary.left {
     background: #211437;
 }
 
-.answer--button.right {
+.button--primary.right {
     background: #00C397;
+}
+
+.button--primary.left.index {
+    margin-right: 20px;
 }

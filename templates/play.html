@@ -51,14 +51,31 @@
                         </div>
                     </div>
                     <div class="answer--container">
-                      <div class="answer--button left">Fake</div>
-                      <div class="answer--button right">Real</div>
+                      <div class="button--primary left">Fake</div>
+                      <div class="button--primary right">Real</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <script type="text/javascript">
+      
+      // Global variables for keeping state
+      var curr_headline = {
+        "text": "California May Soon Unravel Controversial Nets Used To Harvest Swordfish",
+        "answer": false
+      }
+
+      function answer(choice) {
+        if (choice == curr_headline.answer) {
+          console.log('YES. Your answer is correct.')
+        } else {
+          console.log('NO. Your answer is incorrect.')
+        }
+      }
+
+      answer(false)
+
       // var inputs = {{ inputs | safe }}
       // console.log(inputs);
     </script>
