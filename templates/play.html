@@ -67,16 +67,58 @@
 
         // Global variables for keeping state
         var curr_headline = {
+            "answer": false,
             "text": "California May Soon Unravel Controversial Nets Used To Harvest Swordfish",
-            "answer": false
+            "replacements": null
         }
 
-        function selectAnswer(choice) {
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        async function selectAnswer(choice) {
 
             // 1. Reveal answer
-            // 2. Sleep
-            // 3. Change headline && remove answer
+            revealAnswer(choice);
 
+            // 2. Sleep
+            await sleep(2000);
+
+            // 3. Change headline state
+
+            // 4. Change headline div
+
+
+            // 4. remove answer
+            hideAnswer();
+
+        }
+
+        function changeHeadlineState() {
+
+            // Get new headline
+            thisHeadline = getHeadline();
+
+            if (thisHeadline == undefined) {
+                // TODO
+            }
+
+            // Get headline attributes
+            thisHeadlineAnswer = thisHeadline[0]
+            thisHeadlineText = thisHeadline[1]
+            thisHeadlineReplacements = thisHeadline[2]
+
+            // Change state
+            curr_headline.answer = thisHeadlineAnswer
+            curr_headline.text = thisHeadlineText
+            curr_headline.replacements = thisHeadlineReplacements
+
+            // Change div
+
+        }
+
+        function getHeadline() {
+            return inputs.pop();
         }
 
         function revealAnswer(choice) {
@@ -91,7 +133,15 @@
 
         }
 
-        revealAnswer(false);
+        function hideAnswer() {
+
+            // Get and edit reveal DIV
+            $("#reveal--container")
+                .css('visibility', 'hidden')
+
+        }
+
+        // selectAnswer(false);
 
         // var inputs = {{ inputs | safe }}
     </script>
