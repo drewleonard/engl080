@@ -108,13 +108,13 @@ body {
     display: flex;
     height: auto;
     width: auto;
-    background: #FCDFE3;
-    color: #EA4A64;
-    border: 2px solid #EA4A64;
+    /*background: #FCDFE3;*/
+    /*color: #EA4A64;*/
+    /*border: 2px solid #EA4A64;*/
     margin: 0 0 10px 0;
     padding: 5px;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .headline--container {

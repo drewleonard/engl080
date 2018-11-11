@@ -40,9 +40,7 @@
                     <div class="reveal--container" id="reveal--container"></div>
                     <!-- Headline container -->
                     <div class="headline--container">
-                        <div class="headline--title" id="headline--title">
-                            California May Soon Unravel Controversial Nets Used To Harvest Swordfish
-                        </div>
+                        <div class="headline--title" id="headline--title"></div>
                         <div class="headline--bottom">
                             <div class="headline--meta">
                                 <div class="headline--author">
@@ -75,23 +73,23 @@
             revealAnswer(choice);
 
             // 2. Sleep
-            await sleep(2000);
+            await sleep(5000);
 
             // 3. Change headline state
-            changeHeadlineState();
+            setHeadlineState();
     
             // 4. Change headline div
-            changeHeadlineDiv();
+            setHeadlineDiv();
 
             // 4. remove answer
             hideAnswer();
 
         }
 
-        async function changeHeadlineState() {
+        function setHeadlineState() {
 
             // Sleep for offset
-            await sleep(100);
+            // await sleep(25);
 
             // Get new headline
             thisHeadline = inputs.pop();
@@ -105,7 +103,7 @@
 
         }
 
-        function changeHeadlineDiv() {
+        function setHeadlineDiv() {
 
             // Get and edit headline div
             $("#headline--title")
@@ -118,34 +116,45 @@
             var thisChoice = (choice == currHeadline.answer) ? "Correct" : "Incorrect";
             var thisAnswer = (currHeadline.answer == true) ? "real" : "fake";
 
+            var thisBackground = (choice == currHeadline.answer) ? "#DAF3E4" : "#FCDFE3";
+            var thisColor = (choice == currHeadline.answer) ? "#2DBB65" : "#EA4A64";
+            var thisBorder = (choice == currHeadline.answer) ? "2px solid #2DBB65" : "2px solid #EA4A64";
+
             // Get and edit reveal DIV
             $("#reveal--container")
                 .css('visibility', 'visible')
+                .css('background', thisBackground)
+                .css('color', thisColor)
+                .css('border', thisBorder)
                 .html(`<b>${thisChoice}!</b>&nbsp;This headline is ${thisAnswer}.`);
 
         }
 
         function hideAnswer() {
-
             // Get and edit reveal DIV
             $("#reveal--container")
-                .css('visibility', 'hidden')
-
+                .css('visibility', 'hidden');
         }
 
-        // Global variables for keeping state
+        // Set global variables for keeping state
         var inputs = {{ inputs | safe }};
-        
         var currHeadline = {
-            "answer": false,
-            "text": "California May Soon Unravel Controversial Nets Used To Harvest Swordfish",
+            "answer": null,
+            "text": null,
             "replacements": null
         }
 
-        // 
-        $('.button--primary-answer').click(function() {  
-            console.log($(this).data('answer'));
+        // Bind events
+        $('.button--primary-answer').click(function() {              
+            // Retrieve answer
+            thisAnswer = $(this).data('answer');
+            // Submit answer
+            submitAnswer(thisAnswer);
         });
+
+        // Set state
+        setHeadlineState();
+        setHeadlineDiv();
 
     </script>
 </body>
