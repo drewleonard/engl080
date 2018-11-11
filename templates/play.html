@@ -40,7 +40,7 @@
                     <div class="reveal--container" id="reveal--container"></div>
                     <!-- Headline container -->
                     <div class="headline--container">
-                        <div class="headline--title">
+                        <div class="headline--title" id="headline--title">
                             California May Soon Unravel Controversial Nets Used To Harvest Swordfish
                         </div>
                         <div class="headline--bottom">
@@ -56,8 +56,8 @@
                     </div>
                     <!-- Answer container -->
                     <div class="answer--container">
-                        <div class="button--primary left">Fake</div>
-                        <div class="button--primary right">Real</div>
+                        <div class="button--primary left button--primary-answer" id="button--primary-answer" data-answer="false">Fake</div>
+                        <div class="button--primary right button--primary-answer" id="button--primary-answer" data-answer="true">Real</div>
                     </div>
                 </div>
             </div>
@@ -65,18 +65,11 @@
     </div>
     <script type="text/javascript">
 
-        // Global variables for keeping state
-        var curr_headline = {
-            "answer": false,
-            "text": "California May Soon Unravel Controversial Nets Used To Harvest Swordfish",
-            "replacements": null
-        }
-
         function sleep(ms) {
             return new Promise(resolve => setTimeout(resolve, ms));
         }
 
-        async function selectAnswer(choice) {
+        async function submitAnswer(choice) {
 
             // 1. Reveal answer
             revealAnswer(choice);
@@ -85,46 +78,45 @@
             await sleep(2000);
 
             // 3. Change headline state
-
+            changeHeadlineState();
+    
             // 4. Change headline div
-
+            changeHeadlineDiv();
 
             // 4. remove answer
             hideAnswer();
 
         }
 
-        function changeHeadlineState() {
+        async function changeHeadlineState() {
+
+            // Sleep for offset
+            await sleep(100);
 
             // Get new headline
-            thisHeadline = getHeadline();
+            thisHeadline = inputs.pop();
 
-            if (thisHeadline == undefined) {
-                // TODO
-            }
-
-            // Get headline attributes
-            thisHeadlineAnswer = thisHeadline[0]
-            thisHeadlineText = thisHeadline[1]
-            thisHeadlineReplacements = thisHeadline[2]
+            // if (thisHeadline == undefined) {//TODO}
 
             // Change state
-            curr_headline.answer = thisHeadlineAnswer
-            curr_headline.text = thisHeadlineText
-            curr_headline.replacements = thisHeadlineReplacements
-
-            // Change div
+            currHeadline.answer = thisHeadline[0];
+            currHeadline.text = thisHeadline[1];
+            currHeadline.replacements = thisHeadline[2];
 
         }
 
-        function getHeadline() {
-            return inputs.pop();
+        function changeHeadlineDiv() {
+
+            // Get and edit headline div
+            $("#headline--title")
+                .html(`${currHeadline.text}`);
+
         }
 
         function revealAnswer(choice) {
 
-            var thisChoice = (choice == curr_headline.answer) ? "Correct" : "Incorrect";
-            var thisAnswer = (curr_headline.answer == true) ? "real" : "fake";
+            var thisChoice = (choice == currHeadline.answer) ? "Correct" : "Incorrect";
+            var thisAnswer = (currHeadline.answer == true) ? "real" : "fake";
 
             // Get and edit reveal DIV
             $("#reveal--container")
@@ -141,9 +133,20 @@
 
         }
 
-        // selectAnswer(false);
+        // Global variables for keeping state
+        var inputs = {{ inputs | safe }};
+        
+        var currHeadline = {
+            "answer": false,
+            "text": "California May Soon Unravel Controversial Nets Used To Harvest Swordfish",
+            "replacements": null
+        }
 
-        // var inputs = {{ inputs | safe }}
+        // 
+        $('.button--primary-answer').click(function() {  
+            console.log($(this).data('answer'));
+        });
+
     </script>
 </body>
 
