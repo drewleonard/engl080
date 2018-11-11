@@ -113,9 +113,9 @@
 
         function revealAnswer(choice) {
 
-            var thisChoice = (choice == currHeadline.answer) ? "Correct" : "Incorrect";
+            // Get attributes
+            var thisChoice = (choice == currHeadline.answer) ? "Correct!" : "Incorrect.";
             var thisAnswer = (currHeadline.answer == true) ? "real" : "fake";
-
             var thisBackground = (choice == currHeadline.answer) ? "#DAF3E4" : "#FCDFE3";
             var thisColor = (choice == currHeadline.answer) ? "#2DBB65" : "#EA4A64";
             var thisBorder = (choice == currHeadline.answer) ? "2px solid #2DBB65" : "2px solid #EA4A64";
@@ -126,7 +126,7 @@
                 .css('background', thisBackground)
                 .css('color', thisColor)
                 .css('border', thisBorder)
-                .html(`<b>${thisChoice}!</b>&nbsp;This headline is ${thisAnswer}.`);
+                .html(`<b>${thisChoice}</b>&nbsp;This headline is&nbsp<b>${thisAnswer}</b>.`);
 
         }
 
@@ -155,6 +155,8 @@
         // Set state
         setHeadlineState();
         setHeadlineDiv();
+        revealAnswer();
+        hideAnswer();
 
     </script>
 </body>
