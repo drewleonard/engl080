@@ -1,148 +1,129 @@
-:root {
+: root {
     --true-green--primary: #2DBB65;
     --true-green--secondary: #2DBB65;
     --false-red--primary: #EA4A64;
     --false-red--secondary: #FCDFE3;
 }
-
 html {
     height: 100vh;
 }
-
 body {
-    /* sizing */
     min-height: 100vh;
     margin: 0 auto;
     overflow: hidden;
-    /* font */
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
     color: #211437;
-    /* background color */
     background: #1FA2FF;
     background: -webkit-linear-gradient(to bottom, #AAEBFF, #F6F9FC);
     background: linear-gradient(to bottom, #AAEBFF, #F6F9FC);
 }
-
+.index-title--text.underline:after {
+    border-bottom-width: 0;
+}
 .underline:after {
-  display:block;
-  content: '';
-  border-bottom: solid 3px #000;  
-  transform: scaleX(0);  
-  transition: transform 250ms ease-in-out;
-  transform-origin:100% 50%
+    display: block;
+    content: '';
+    border-bottom: solid 5px rgba(0,195,151,0.75);
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+    transform-origin: 100% 50%;
+    line-height: 5px;
+    margin: -7px 0;
 }
-
-.underline:hover:after { 
-  transform: scaleX(1);
-  transform-origin:0 50%;
+.underline:hover:after {
+    transform: scaleX(1);
+    transform-origin: 0 50%;
 }
-
 .underline {
-    position:relative;
-    display:inline-block;
+    position: relative;
+    display: inline-block;
     cursor: pointer;
-    text-decoration:none;
+    text-decoration: none;
 }
-
 a {
-    text-decoration:none;
-    cursor: pointer;
+    text-decoration: none;
+    !important cursor: pointer;
+    color: inherit;
 }
-
 .index-container {
     display: flex;
     flex-direction: column;
     height: 100vh;
     padding: 0 0 0 0;
 }
-
 .index-container--top {
     padding: 20px;
 }
-
 .index-header--container {
     display: flex;
     justify-content: space-between;
+    flex-direction: row;
 }
-
 .index-title--container {
-    align-self: flex-end;
+    margin: 0 20px 0 0;
+    vertical-align: bottom;
+    display: table-cell;
 }
-
 .index-title--text {
     font-size: 32px;
     font-variant: small-caps;
     font-weight: 900;
+    margin: 0 0 0 20px;
 }
-
 .index-links--container {
     display: flex;
     flex-direction: row;
     margin: 0 20px 0 0;
 }
-
 .index-links--text {
     align-self: flex-end;
     margin: 0 20px 0 20px;
 }
-
 .index-main--container {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
 .index-center--container {
     margin: 20vh 0 0 0;
 }
-
 .index-center--title {
     font-variant: small-caps;
     font-weight: 900;
     font-size: 72px;
 }
-
 .index-center--button-container {
     display: flex;
     flex-direction: row;
 }
-
 .index-container--bottom {
     display: flex;
     flex-direction: row;
     margin-top: auto;
     justify-content: space-between;
 }
-
 .clipart {
     height: 200px;
 }
-
 .clipart.left {
     height: 200px;
     margin-left: 100px;
 }
-
 .clipart.right {
     height: 200px;
     margin-right: 100px;
 }
-
 .reveal--container {
     visibility: hidden;
     display: flex;
     height: auto;
     width: auto;
-    /*background: #FCDFE3;*/
-    /*color: #EA4A64;*/
-    /*border: 2px solid #EA4A64;*/
     margin: 0 0 10px 0;
     padding: 7.5px;
     border-radius: 5px;
     font-size: 16px;
 }
-
 .headline--container {
     height: auto;
     min-height: 100px;
@@ -155,36 +136,29 @@ a {
     display: flex;
     flex-direction: column;
     padding: 30px;
-    /*border: px solid rgba(234,67,53, .5);*/
 }
-
 .headline--title {
     text-transform: capitalize;
     font-size: 24px;
 }
-
 .headline--bottom {
     display: flex;
     flex-direction: row;
     margin: 20px 0 0 0;
 }
-
 .headline--meta {
     display: flex;
     flex-direction: column;
     font-size: 16px;
 }
-
 .headline--date {
     color: #888888;
 }
-
 .answer--container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-
 .button--primary {
     padding: 20px 60px 20px 60px;
     margin: 60px 0 0 0;
@@ -194,19 +168,15 @@ a {
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
-
 .button--primary:hover {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
-
 .button--primary.left {
     background: #211437;
 }
-
 .button--primary.right {
     background: #00C397;
 }
-
 .button--primary.left.index {
     margin-right: 20px;
 }

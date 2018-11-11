@@ -19,7 +19,7 @@
             <div class="index-header--container">
                 <!-- Title -->
                 <div class="index-title--container">
-                    <div class="index-title--text">
+                    <div class="index-title--text underline">
                         <a href="{{ url_for('index') }}">
                             Disinformation
                         </a>
@@ -58,8 +58,8 @@
                     </div>
                     <!-- Answer container -->
                     <div class="answer--container">
-                        <div class="button--primary left button--primary-answer" id="button--primary-answer" data-answer="false">Fake</div>
-                        <div class="button--primary right button--primary-answer" id="button--primary-answer" data-answer="true">Real</div>
+                        <div class="button--primary left button--primary-answer" data-answer="false">Fake</div>
+                        <div class="button--primary right button--primary-answer" data-answer="true">Real</div>
                     </div>
                 </div>
             </div>
@@ -77,7 +77,7 @@
             revealAnswer(choice);
 
             // 2. Sleep
-            await sleep(5000);
+            await sleep(4000);
 
             // 3. Change headline state
             setHeadlineState();
