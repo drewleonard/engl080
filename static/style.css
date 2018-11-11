@@ -24,6 +24,11 @@ body {
     background: linear-gradient(to bottom, #AAEBFF, #F6F9FC);
 }
 
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .index-container {
     display: flex;
     flex-direction: column;
