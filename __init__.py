@@ -32,3 +32,6 @@ def play():
 	game_obj = game.Game(generator_obj, corpus_obj.headlines)
 
 	return render_template('play.html', inputs=json.dumps(game_obj.inputs))
+
+if __name__ == '__main__':
+    app.run()
