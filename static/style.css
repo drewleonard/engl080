@@ -246,5 +246,10 @@ a {
     border-bottom: solid 5px rgba(0,195,151,0.75);
     line-height: 15px;
     text-align: justify;
+}
 
+.underline--inline {
+    border-bottom: solid 5px rgba(0,195,151,0.60);
+    display: inline-block;
+    line-height: 8px;
 }
