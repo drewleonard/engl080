@@ -34,5 +34,4 @@ def play():
 	return render_template('play.html', inputs=json.dumps(game_obj.inputs))
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)
+    app.run()
