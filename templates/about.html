@@ -48,7 +48,7 @@
                     <div class="about-card--container">
                         <div class="about-card--section">
                             <div class="about-card--text">
-                                This project explores disinformation's dangers by both generating false news headlines automatically and testing whether users can spot them. Click here to play. 
+                                This project explores disinformation's dangers by both generating fake news headlines automatically and testing whether users can spot them. Click here to play. 
                             </div>
                         </div>
                         <div class="about-card--section">
@@ -58,7 +58,7 @@
                                 </div>
                             </div>
                             <div class="about-card--text">
-                                Disinformation is intentionally-misleading information. While not new, its presence online has ballooned in recent years, with social media platforms propagating the content across their networks with large and negative impacts. Importantly, disinformation often mixes real and fake news to deceive. This characteristic makes it difficult to spot and plausible to generate automatically: actors can manipulate real news to create fake news, spinning reality effectively. It follows that this project's two goals are to: first, explore the process of generating disinformation automatically; and second, test whether individuals can spot it. In the process, this project critiques the uncertainty built into the era of social media news consumption, in which individuals look toward subjective and unfiltered sources for information. 
+                                Disinformation is intentionally-misleading information.[1] While not new, its presence online has ballooned in recent years, with social media platforms propagating the content across their networks with large and negative impacts. For example, recent disinformation campaigns are linked to violence against minorities across the world,[2,3] as well as discord in democratic societies.[4] Importantly, disinformation often mixes real and fake news to deceive.[5] This characteristic makes it difficult to spot and plausible to generate automatically: actors can manipulate real news to create fake news, spinning reality effectively. It follows that this project's two goals are to: first, explore the process of generating disinformation automatically; and second, test whether individuals can spot it. In the process, this project critiques the uncertainty built into the era of social media news consumption, in which individuals look toward subjective and unfiltered sources for information. In addition, this project hopes to—in some small way—push back against disinformation's subversive influence in educating users about its deceptive qualities.
                             </div>
                         </div>
                         <div class="about-card--section">
@@ -68,7 +68,7 @@
                                 </div>
                             </div>
                             <div class="about-card--text">
-                                This project's code passes real headlines through heuristic algorithms to generate fake headlines. First, it loads thousands of Fox News headlines into memory. Second, it finds and records their named entities and noun chunks. Third, it generates fake headlines by selecting and manipulating the real headlines randomly. For random headlines, it replaces portions of their text with random named entities and noun chunks recorded from other headlines. In doing so, it generates partly true and ideally believable—but still false—headlines. With this data, this project tests whether users can spot which headlines are real or fake. See the project's code and dependencies here.
+                                This project's code passes real headlines through heuristic algorithms to generate fake headlines. First, it loads thousands of Fox News headlines into memory. Second, it finds and records their named entities and noun chunks. Third, it generates fake headlines by selecting and manipulating the real headlines randomly. For random headlines, it replaces portions of their text with random named entities and noun chunks recorded from other headlines. In doing so, it generates partly true and ideally believable—but still false—headlines. With this data, this project tests whether users can spot which headlines are real or fake. This project leverages Python Flask for its backend and hand-written JavaScript, HTML5, and CSS3 for its frontend. See the project's code, data, dependencies, and installation instructions here.
                             </div>
                         </div>
                         <div class="about-card--section">
@@ -78,18 +78,30 @@
                                 </div>
                             </div>
                             <div class="about-card--text">
-                                This project selected Fox News for its real headlines due partly to their face-value objectivity and partly to their content's similarity to headlines from the fake news ecosystem, which emits outrageous and often right-wing messages. Websites such as Breitbart News Network mirror Fox News' general tone and content, but subvert audiences by mixing false information into the mix. As such, Fox News helped to generate partly-real and partly-false content automatically, reflecting the types of news that Breitbart and similar sources deliver. In addition, this project's game scrubs the headlines of their original dates, authorship, and capitalization to standardize output. The goal here was to capture the reality of 
+                                This project selected Fox News for its real headlines due partly to their face-value objectivity and partly to their content's similarity to headlines from the fake news ecosystem, which emits outrageous and often right-wing messages.[6] Websites such as Breitbart News Network mirror Fox News' general tone and content, but subvert audiences by mixing false information into the mix.[7] As such, Fox News helped to generate partly-real and partly-false content automatically, reflecting the types of news that Breitbart and similar sources deliver. While this project might have used other mainstream news sources (such as CNN) or non-mainstream news sources (such as Breitbart) for input headlines, Fox News had the right might of face-value objectivity and distance to actual fake news sources to create mixed-veracity headlines automatically. In addition, this project scrubs the headlines of their original dates, authorship, and capitalization to standardize output. While fake news would come with this information helpful for estimating its veracity, this project removed the crutch because "high-quality" fake news sources might edit these details manually to maximize impact.
                             </div>
                         </div>
                         <div class="about-card--section">
                             <div class="about-card--title--container">
                                 <div class="about-card--title--text">
-                                    References
+                                    Next Steps
                                 </div>
                             </div>
                             <div class="about-card--text">
+                                
                             </div>
                         </div>
+                        <div class="about-card--section">
+                            <div class="about-card--title--container">
+                                <div class="about-card--title--text">
+                                    Endnotes
+                                </div>
+                            </div>
+                            <div class="about-card--text">
+                                [1] A. Marwick and R. Lewis, “Media manipulation and disinformation online,” New York: Data & Society Research Institute, 2017.<br>[2] K. Müller and C. Schwarz, “Fanning the  ames of hate: Social media and hate crime,” 2017.<br>[3] P. Mozur, “A genocide incited on facebook, with posts from myanmar’s military,” The New York Times, 2018.<br>A. C. Madrigal, “What facebook did to american democracy,” The Atlantic, 2017.<br>[4] N. Persily, “The 2016 US Election: Can Democracy Survive the Internet?” Journal of Democracy, vol. 28, no. 2, pp. 63–76, 2017.<br>[5] N. Persily, “The 2016 US Election: Can Democracy Survive the Internet?” Journal of Democracy, vol. 28, no. 2, pp. 63–76, 2017.<br>[6] R. Faris, H. Roberts, B. Etling, N. Bourassa, E. Zuckerman, and Y. Benkler, “Partisanship, Propaganda, and Disinformation: Online Media and the 2016 US Presidential Election,” 2017.<br>[7] R. Faris, H. Roberts, B. Etling, N. Bourassa, E. Zuckerman, and Y. Benkler, “Partisanship, Propaganda, and Disinformation: Online Media and the 2016 US Presidential Election,” 2017.
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
