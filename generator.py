@@ -1,5 +1,6 @@
 import random
 import spacy
+import en_core_web_sm
 
 class Generator(object):
 
@@ -11,7 +12,7 @@ class Generator(object):
         self.map_entity = None
         self.map_chunk = None
 
-        self.nlp = spacy.load('en')
+        self.nlp = en_core_web_sm.load()
         self._set_maps()
 
     def _get_attributes(self, doc):
