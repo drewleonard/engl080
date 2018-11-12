@@ -32,4 +32,3 @@ def play():
 	game_obj = game.Game(generator_obj, corpus_obj.headlines)
 
 	return render_template('play.html', inputs=json.dumps(game_obj.inputs))
-	# return render_template('play.html')
