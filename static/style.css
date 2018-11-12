@@ -19,6 +19,8 @@ body {
     background: linear-gradient(to bottom, #AAEBFF, #F6F9FC);
 }
 .index-title--text.underline:after {
+    line-height: 10px;
+    margin: -10px 0;
     border-bottom-width: 0;
 }
 .underline:after {
@@ -28,7 +30,7 @@ body {
     transform: scaleX(0);
     transition: transform 250ms ease-in-out;
     transform-origin: 100% 50%;
-    line-height: 5px;
+    line-height: 7px;
     margin: -7px 0;
 }
 .underline:hover:after {
@@ -46,13 +48,15 @@ a {
     !important cursor: pointer;
     color: inherit;
 }
-.index-container {
+.index-container,
+.about-container {
     display: flex;
     flex-direction: column;
     height: 100vh;
     padding: 0 0 0 0;
 }
-.index-container--top {
+.index-container--top,
+.about-container--top {
     padding: 20px;
 }
 .index-header--container {
@@ -81,12 +85,14 @@ a {
     margin: 0 20px 0 20px;
     font-size: 20px
 }
-.index-main--container {
+.index-main--container,
+.about-main--container {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.index-center--container {
+.index-center--container,
+.about-center--container {
     margin: 20vh 0 0 0;
 }
 .index-center--title {
@@ -180,4 +186,39 @@ a {
 }
 .button--primary.left.index {
     margin-right: 20px;
+}
+.about-container--top {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.about-main--container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: flex-start;
+}
+.about-center--container {}
+.about-center--title {
+    align-self: flex-start;
+    font-variant: small-caps;
+    font-weight: 900;
+    font-size: 72px;
+}
+.about-card--container {
+    margin: 0 0 0 0;
+    flex-grow: 1;
+    border-radius: 5px;
+    max-width: 500px;
+}
+.about-card--section {
+    margin: 30px 0 0 0;
+    display: flex;
+    flex-direction: column;
+}
+.about-card--title {
+    margin: 0 0 10px 0;
+    font-weight: 900;
+    font-size: 28px;
+    font-variant: small-caps;
 }

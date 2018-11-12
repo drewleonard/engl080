@@ -7,6 +7,8 @@
     <!-- Styling -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
@@ -66,102 +68,117 @@
         </div>
     </div>
     <script type="text/javascript">
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
 
-        function sleep(ms) {
-            return new Promise(resolve => setTimeout(resolve, ms));
-        }
+    async function submitAnswer(choice) {
 
-        async function submitAnswer(choice) {
+        // 1. Reveal answer
+        revealAnswer(choice);
 
-            // 1. Reveal answer
-            revealAnswer(choice);
+        // 2. Sleep
+        await sleep(4000);
 
-            // 2. Sleep
-            await sleep(4000);
-
-            // 3. Change headline state
-            setHeadlineState();
-    
-            // 4. Change headline div
-            setHeadlineDiv();
-
-            // 4. remove answer
-            hideAnswer();
-
-        }
-
-        function setHeadlineState() {
-
-            // Sleep for offset
-            // await sleep(25);
-
-            // Get new headline
-            thisHeadline = inputs.pop();
-
-            // if (thisHeadline == undefined) {//TODO}
-
-            // Change state
-            currHeadline.answer = thisHeadline[0];
-            currHeadline.text = thisHeadline[1];
-            currHeadline.replacements = thisHeadline[2];
-
-        }
-
-        function setHeadlineDiv() {
-
-            // Get and edit headline div
-            $("#headline--title")
-                .html(`${currHeadline.text}`);
-
-        }
-
-        function revealAnswer(choice) {
-
-            // Get attributes
-            var thisChoice = (choice == currHeadline.answer) ? "Correct!" : "Incorrect.";
-            var thisAnswer = (currHeadline.answer == true) ? "real" : "fake";
-            var thisBackground = (choice == currHeadline.answer) ? "#DAF3E4" : "#FCDFE3";
-            var thisColor = (choice == currHeadline.answer) ? "#2DBB65" : "#EA4A64";
-            var thisBorder = (choice == currHeadline.answer) ? "2px solid #2DBB65" : "2px solid #EA4A64";
-
-            // Get and edit reveal DIV
-            $("#reveal--container")
-                .css('visibility', 'visible')
-                .css('background', thisBackground)
-                .css('color', thisColor)
-                .css('border', thisBorder)
-                .html(`<b>${thisChoice}</b>&nbsp;This headline is&nbsp<b>${thisAnswer}</b>.`);
-
-        }
-
-        function hideAnswer() {
-            // Get and edit reveal DIV
-            $("#reveal--container")
-                .css('visibility', 'hidden');
-        }
-
-        // Set global variables for keeping state
-        var inputs = {{ inputs | safe }};
-        var currHeadline = {
-            "answer": null,
-            "text": null,
-            "replacements": null
-        }
-
-        // Bind events
-        $('.button--primary-answer').click(function() {              
-            // Retrieve answer
-            thisAnswer = $(this).data('answer');
-            // Submit answer
-            submitAnswer(thisAnswer);
-        });
-
-        // Set state
+        // 3. Change headline state
         setHeadlineState();
+
+        // 4. Change headline div
         setHeadlineDiv();
-        revealAnswer();
+
+        // 4. remove answer
         hideAnswer();
 
+    }
+
+    function getHeadline() {
+        return inputs.pop();
+    }
+
+    function setHeadlineState() {
+
+        // Get new headline
+        thisHeadline = getHeadline();
+
+        // if (thisHeadline == undefined) {//TODO}
+
+        // Change state
+        currHeadline.answer = thisHeadline[0];
+        currHeadline.text = thisHeadline[1];
+        currHeadline.replacements = thisHeadline[2];
+
+    }
+
+    function setHeadlineDiv() {
+
+        // Get and edit headline div
+        $("#headline--title")
+            .html(`${currHeadline.text}`);
+
+    }
+
+    function revealAnswer(choice) {
+
+        // Get attributes
+        var thisChoice = (choice == currHeadline.answer) ? "Correct!" : "Incorrect.";
+        var thisAnswer = (currHeadline.answer == true) ? "real" : "fake";
+        var thisBackground = (choice == currHeadline.answer) ? "#DAF3E4" : "#FCDFE3";
+        var thisColor = (choice == currHeadline.answer) ? "#2DBB65" : "#EA4A64";
+        var thisBorder = (choice == currHeadline.answer) ? "2px solid #2DBB65" : "2px solid #EA4A64";
+
+        // Get and edit reveal DIV
+        $("#reveal--container")
+            .css('visibility', 'visible')
+            .css('background', thisBackground)
+            .css('color', thisColor)
+            .css('border', thisBorder)
+            .html(`<b>${thisChoice}</b>&nbsp;This headline is&nbsp<b>${thisAnswer}</b>.`);
+
+    }
+
+    function hideAnswer() {
+        // Get and edit reveal DIV
+        $("#reveal--container")
+            .css('visibility', 'hidden');
+    }
+
+    /**
+     * https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
+     * Shuffles array in place.
+     * @param {Array} a items An array containing the items.
+     */
+    function shuffle(a) {
+        var j, x, i;
+        for (i = a.length - 1; i > 0; i--) {
+            j = Math.floor(Math.random() * (i + 1));
+            x = a[i];
+            a[i] = a[j];
+            a[j] = x;
+        }
+        return a;
+    }
+
+    // Set global variables for keeping state
+    var inputs = shuffle({{ inputs | safe }});
+    var currHeadline = {
+        "answer": null,
+        "text": null,
+        "replacements": null
+    }
+
+    // Bind events
+    $('.button--primary-answer').click(function() {
+        // Retrieve answer
+        thisAnswer = $(this).data('answer');
+        // Submit answer
+        submitAnswer(thisAnswer);
+    });
+
+    // Set state
+    setHeadlineState();
+    setHeadlineDiv();
+    revealAnswer();
+    hideAnswer();
     </script>
 </body>
 
