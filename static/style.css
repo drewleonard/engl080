@@ -79,6 +79,7 @@ a {
 .index-links--text {
     align-self: flex-end;
     margin: 0 20px 0 20px;
+    font-size: 20px
 }
 .index-main--container {
     display: flex;

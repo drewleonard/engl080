@@ -7,6 +7,7 @@
     <!-- Styling -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 </head>
 
 <body>
@@ -17,16 +18,20 @@
             <div class="index-header--container">
                 <!-- Title -->
                 <div class="index-title--container">
-                    <div class="index-title--text">
-                        Disinformation
+                    <div class="index-title--text underline">
+                        <a href="{{ url_for('index') }}">
+                            Disinformation
+                        </a>
                     </div>
                 </div>
                 <!-- Links -->
                 <div class="index-links--container">
-                    <div class="index-links--text">
-                        Play
+                    <div class="index-links--text underline">
+                        <a href="{{ url_for('play') }}">
+                            Play
+                        </a>
                     </div>
-                    <div class="index-links--text">
+                    <div class="index-links--text underline">
                         About
                     </div>
                 </div>
@@ -41,7 +46,11 @@
                         Test your ability to detect fake news headlines.
                     </div>
                     <div class="index-center--button-container">
-                        <div class="button--primary left index">Play</div>
+                        <div class="button--primary left index">
+                            <a href="{{ url_for('play') }}">
+                                Play
+                            </a>
+                        </div>
                         <div class="button--primary right">About</div>
                     </div>
                 </div>
