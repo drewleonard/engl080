@@ -19,6 +19,14 @@ def about():
 @app.route('/play/')
 def play():
 
+
+    # Load game object
+    # Precomputed with 5000 Fox News headlines
+    #
+    # This is for speed in loading the game
+    #
+    # Use code block below to use different news source
+    # and compute on the spot
     game_obj_inputs_path = "game_obj_inputs_5000.p"
 
     with open(game_obj_inputs_path, 'rb') as f:
@@ -26,7 +34,7 @@ def play():
 
     return render_template('play.html', inputs=json.dumps(game_obj_inputs))
 
- #    # Set corpus headline source
+    # # Set corpus headline source
     # # options: nyt, breitbart, cnn, fox, buzzfeed
     # corpus_headlines = "fox.dill"
 
@@ -39,14 +47,6 @@ def play():
 
     # # Load game object into memory
     # game_obj = game.Game(generator_obj, corpus_obj.headlines)
-
-    # Load game object
-    # Precomputed with 5000 Fox News headlines
-    #
-    # This is for speed in loading the game
-    #
-    # Uncomment block above to use different news source
-    # and compute on the spot
 
 
 if __name__ == '__main__':
