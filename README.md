@@ -26,13 +26,16 @@ To run this project locally, invoke the executable:
 ```
 $ ./run.sh
 ```
-Additionally, navigate to `__init__.py` to modify game parameters, such as news source.
+Adjust the game's input parameters (such as news source) in:
+```
+__init__.py
+```
 
 ## Built With
 * Backend framework: [Python Flask](http://flask.pocoo.org/)
 * Backend computation: [Python spaCy](https://spacy.io/)
 * Frontend: from-scratch JavaScript, HTML5, and CSS3
-* Data source:[Princeton's Center for Information Technology Policy](https://freedom-to-tinker.com/2016/09/14/all-the-news-thats-fit-to-change-insights-into-a-corpus-of-2-5-million-news-headlines/)
+* Data source: [Princeton's Center for Information Technology Policy](https://freedom-to-tinker.com/2016/09/14/all-the-news-thats-fit-to-change-insights-into-a-corpus-of-2-5-million-news-headlines/)
 
 ## Acknowledgements
 
