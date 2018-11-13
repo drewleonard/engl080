@@ -4,11 +4,11 @@ Explores disinformation's dangers by testing whether you can spot fake and autom
 
 ## Getting Started
 
-#### Requirements
+### Requirements
 
 This project uses `Python 3.x`. I recommend install dependencies with the [pip package manager](https://pip.pypa.io/en/stable/installing/).
 
-#### Installation
+### Installation
 
 Download this project's code here:
 ```
@@ -21,7 +21,7 @@ $ source venv/bin/activate/
 (venv) $ pip install -r requirements.txt
 ```
 
-#### Usage
+### Usage
 To run this project locally, run the executable:
 ```
 ./run.sh
