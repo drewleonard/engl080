@@ -26,7 +26,11 @@ To run this project locally, invoke the executable:
 ```
 $ ./run.sh
 ```
-Adjust the game's input parameters (such as news source) in:
+Then, navigate to the local server in your browser. For example:
+```
+http://127.0.0.1:5000/
+```
+Adjust the game's input parameters (such as news source) by navigating to:
 ```
 __init__.py
 ```
