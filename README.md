@@ -32,7 +32,7 @@ http://127.0.0.1:5000/
 ```
 Adjust the game's input parameters (such as news source) by navigating to:
 ```
-__init__.py
+app.py
 ```
 
 ## Built With
