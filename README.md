@@ -28,6 +28,12 @@ $ ./run.sh
 ```
 Additionally, navigate to `__init__.py` to modify game parameters, such as news source.
 
+## Built With
+* Backend framework: [Python Flask](http://flask.pocoo.org/)
+* Backend computation: [Python spaCy](https://spacy.io/)
+* Frontend: from-scratch JavaScript, HTML5, and CSS3
+* Data source:[Princeton's Center for Information Technology Policy](https://freedom-to-tinker.com/2016/09/14/all-the-news-thats-fit-to-change-insights-into-a-corpus-of-2-5-million-news-headlines/)
+
 ## Acknowledgements
 
 I created this project for Dartmouth College's Enlish 080: Writing with Algorithms course, taught by Professor Kyle Booten during Fall Term 2018. Two similar projects provided inspiration: [Bad News](https://getbadnews.com/#intro) and [The New York Times' disinformation quiz](https://www.nytimes.com/interactive/2018/09/04/technology/facebook-influence-campaigns-quiz.html).
