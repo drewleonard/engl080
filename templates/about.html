@@ -54,17 +54,17 @@
                         <div class="about-card--section">
                             <div class="about-card--title--container">
                                 <div class="about-card--title--text">
-                                    Motivation & Goals
+                                    1. Motivation & Goals
                                 </div>
                             </div>
                             <div class="about-card--text">
-                                Disinformation is intentionally-misleading information.[1] While not new, its presence online has ballooned in recent years, as social media platforms propagate the content across their networks with large and negative impacts. For example, disinformation campaigns are linked to violence against minorities globally,[2,3] as well as discord in democratic societies.[4] Importantly, disinformation often mixes real and fake news to deceive.[5] This characteristic makes it difficult to spot and plausible to generate automatically: actors can manipulate real news to create fake news, spinning reality effectively.<br><br>It follows that this project's two goals are to: first, explore the process of generating disinformation (specifically fake news headlines) automatically; and second, test whether individuals can spot it. In the process, this project critiques the uncertainty built into the era of social media news consumption, in which individuals look toward subjective and unfiltered sources for information. Additionally, this project hopes to—in an at-least small way—push back against disinformation's subversive influence by educating users about its deceptive qualities.
+                                Disinformation is intentionally-misleading information.[1] While not new, its presence online has ballooned in recent years, as social media platforms propagate the content across their networks with large and negative impacts. For example, disinformation campaigns are linked to violence against minorities globally,[2,3] as well as discord in democratic societies.[4] Importantly, disinformation often mixes real and fake news to deceive.[5] This characteristic makes it difficult to spot and plausible to generate automatically: actors can manipulate real news to create fake news, spinning reality effectively.<br><br>It follows that this project's two goals are to: first, explore the process of generating disinformation (specifically fake news headlines) automatically; and second, test whether individuals can spot it. This project is a litmus test for automatically-generated disinformation. As such, it critiques the uncertainty built into the era of social media news consumption, in which individuals look toward subjective and unfiltered sources for information. Additionally, this project hopes to—in an at-least small way—push back against disinformation's subversive influence by educating users about its deceptive qualities.
                             </div>
                         </div>
                         <div class="about-card--section">
                             <div class="about-card--title--container">
                                 <div class="about-card--title--text">
-                                    Computational Methods
+                                    2. Computational Methods
                                 </div>
                             </div>
                             <div class="about-card--text">
@@ -74,31 +74,41 @@
                         <div class="about-card--section">
                             <div class="about-card--title--container">
                                 <div class="about-card--title--text">
-                                    Critical Choices
+                                    3. Critical Choices
                                 </div>
                             </div>
                             <div class="about-card--text">
-                                This project selected Fox News for its real headlines due partly to their face-value objectivity and partly to their content's similarity to headlines from the fake news ecosystem, which emits outrageous and often right-wing messages.[7] Websites such as Breitbart News Network mirror Fox News' general tone and content, but subvert audiences by mixing false information into the mix.[8] As such, Fox News helped to generate partly-real and partly-false content automatically, reflecting the types of news that Breitbart and similar sources deliver. While this project might have used other mainstream news sources (such as CNN) or non-mainstream news sources (such as Breitbart) for input headlines, Fox News had the right mix of face-value objectivity and distance to actual fake news sources to create mixed-veracity headlines automatically. In addition, this project scrubs the headlines of their original dates, authorship, and capitalization to standardize output. While fake news would come with this information helpful for estimating its veracity, this project removed the crutch because "high-quality" fake news sources might edit these details manually to maximize impact.
+                                This project selected Fox News for its real headlines due partly to their face-value objectivity and partly to their content's similarity to headlines from the fake news ecosystem, which emits outrageous and often right-wing messages.[7] Websites such as Breitbart News Network mirror Fox News' general tone and content, but subvert audiences by mixing false information into the mix.[8] As such, Fox News helped to generate partly-real and partly-false content automatically, reflecting the types of news that Breitbart and similar sources deliver. While this project might have used other mainstream news sources (such as CNN) or non-mainstream news sources (such as Breitbart) for input headlines, Fox News had the right mix of face-value objectivity and distance to actual fake news sources to create mixed-veracity headlines automatically.<br><br>In addition, this project scrubs the headlines of their original dates, authorship, and capitalization to standardize output. While savvy news consumers would find this information helpful for estimating its veracity, also-savvy news producers would likely edit those details manually to maximize beleivability and impact. As such, in scrubbing the headlines of this data, this project assumes that news producers generating disinformation automatically would not let unbelievable metadata lower its impact.
                             </div>
                         </div>
                         <div class="about-card--section">
                             <div class="about-card--title--container">
                                 <div class="about-card--title--text">
-                                    Next Steps
+                                    4. Discussion
                                 </div>
                             </div>
                             <div class="about-card--text">
-                                
+                                This project was successful in generating 
                             </div>
                         </div>
                         <div class="about-card--section">
                             <div class="about-card--title--container">
                                 <div class="about-card--title--text">
-                                    Endnotes
+                                    5. Next Steps
                                 </div>
                             </div>
                             <div class="about-card--text">
-                                [1] A. Marwick and R. Lewis, “Media manipulation and disinformation online,” New York: Data & Society Research Institute, 2017.<br>[2] K. Müller and C. Schwarz, “Fanning the  ames of hate: Social media and hate crime,” 2017.<br>[3] P. Mozur, “A genocide incited on facebook, with posts from myanmar’s military,” The New York Times, 2018.<br>A. C. Madrigal, “What facebook did to american democracy,” The Atlantic, 2017.<br>[4] N. Persily, “The 2016 US Election: Can Democracy Survive the Internet?” Journal of Democracy, vol. 28, no. 2, pp. 63–76, 2017.<br>[5] N. Persily, “The 2016 US Election: Can Democracy Survive the Internet?” Journal of Democracy, vol. 28, no. 2, pp. 63–76, 2017.<br>[6] Noun chunks and named entities are linguistic features that Python libraries such as <a target="_blank" class="underline--inline" href="https://spacy.io/">spaCy</a> can discover. See <a target="_blank" class="underline--inline" href="https://spacy.io/usage/linguistic-features">here</a> for more information.<br>[7] R. Faris, H. Roberts, B. Etling, N. Bourassa, E. Zuckerman, and Y. Benkler, “Partisanship, Propaganda, and Disinformation: Online Media and the 2016 US Presidential Election,” 2017.<br>[8] R. Faris, H. Roberts, B. Etling, N. Bourassa, E. Zuckerman, and Y. Benkler, “Partisanship, Propaganda, and Disinformation: Online Media and the 2016 US Presidential Election,” 2017.
+                                There are at least two natural next steps that emerge from this project's weak spots. First, it should improve its algorithms to generate better (read: more believable) content. While this projects generated headlines have relatively believable structures or grammars, their scopes generally are too wide to fool individuals. Put differently, the grammar is strong but the content is weak. Finding ways to generate headlines around specific topics would be smarter, rather than generating headlines around any topics available from the input headlines. <a target="_blank" class="underline--inline" href="https://www.structuraltopicmodel.com">Stuctural Topic Models</a> (STM) would help in discovering discussed topics, which could be mapped to noun chunks and named entities.[9] To improve content further, this project might also pair headlines with images, which mirrors how some headlines appear on social media and might make the output more believable.<br><br>Second, this project should expand its output to better-educate individuals about disinformation. As it stands, this project does not guide individuals well around characteristics that make disinformation persuasive. As such, the project should show individuals side-by-side (or otherwise) the real and fake headlines, at least.
+                            </div>
+                        </div>
+                        <div class="about-card--section">
+                            <div class="about-card--title--container">
+                                <div class="about-card--title--text">
+                                    6. Endnotes
+                                </div>
+                            </div>
+                            <div class="about-card--text">
+                                [1] A. Marwick and R. Lewis, “Media manipulation and disinformation online,” New York: Data & Society Research Institute, 2017.<br>[2] K. Müller and C. Schwarz, “Fanning the  ames of hate: Social media and hate crime,” 2017.<br>[3] P. Mozur, “A genocide incited on facebook, with posts from myanmar’s military,” The New York Times, 2018.<br>A. C. Madrigal, “What facebook did to american democracy,” The Atlantic, 2017.<br>[4] N. Persily, “The 2016 US Election: Can Democracy Survive the Internet?” Journal of Democracy, vol. 28, no. 2, pp. 63–76, 2017.<br>[5] N. Persily, “The 2016 US Election: Can Democracy Survive the Internet?” Journal of Democracy, vol. 28, no. 2, pp. 63–76, 2017.<br>[6] Noun chunks and named entities are linguistic features that Python libraries such as <a target="_blank" class="underline--inline" href="https://spacy.io/">spaCy</a> can discover. See <a target="_blank" class="underline--inline" href="https://spacy.io/usage/linguistic-features">here</a> for more information.<br>[7] R. Faris, H. Roberts, B. Etling, N. Bourassa, E. Zuckerman, and Y. Benkler, “Partisanship, Propaganda, and Disinformation: Online Media and the 2016 US Presidential Election,” 2017.<br>[8] R. Faris, H. Roberts, B. Etling, N. Bourassa, E. Zuckerman, and Y. Benkler, “Partisanship, Propaganda, and Disinformation: Online Media and the 2016 US Presidential Election,” 2017.<br>[9]M. E. Roberts, B. M. Stewart, D. Tingley, C. Lucas, J. Leder-Luis, S. K. Gadarian, B. Albertson, and D. G. Rand, “Structural topic models for open-ended survey responses,” American Journal of Political Science, vol. 58, no. 4, pp. 1064–1082, 2014.
                             </div>
                         </div>
                         
