@@ -1,6 +1,6 @@
 # Fact-Finding
 
-Explores disinformation's dangers by testing whether you can spot fake and automatically-generated news headlines.
+This project explores disinformation's dangers by testing whether users can spot fake and automatically-generated news headlines.
 
 ## Getting Started
 
@@ -22,9 +22,12 @@ $ source venv/bin/activate/
 ```
 
 ### Usage
-To run this project locally, run the executable:
+To run this project locally, invoke the executable:
 ```
-./run.sh
+$ ./run.sh
 ```
 Additionally, navigate to `__init__.py` to modify game parameters, such as news source.
 
+## Acknowledgements
+
+I created this project for Dartmouth College's Enlish 080: Writing with Algorithms course, taught by Professor Kyle Booten during Fall Term 2018. Two similar projects provided inspiration: [Bad News](https://getbadnews.com/#intro) and [The New York Times' disinformation quiz](https://www.nytimes.com/interactive/2018/09/04/technology/facebook-influence-campaigns-quiz.html).
