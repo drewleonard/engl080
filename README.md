@@ -43,4 +43,4 @@ __init__.py
 
 ## Acknowledgements
 
-I created this project for Dartmouth College's Enlish 080: Writing with Algorithms course, taught by Professor Kyle Booten during Fall Term 2018. Two similar projects provided inspiration: [Bad News](https://getbadnews.com/#intro) and [The New York Times' disinformation quiz](https://www.nytimes.com/interactive/2018/09/04/technology/facebook-influence-campaigns-quiz.html).
+I created this project for Dartmouth College's English 080: Writing with Algorithms course, taught by Professor Kyle Booten during Fall Term 2018. Two similar projects provided inspiration: [Bad News](https://getbadnews.com/#intro) and [The New York Times' disinformation quiz](https://www.nytimes.com/interactive/2018/09/04/technology/facebook-influence-campaigns-quiz.html).
