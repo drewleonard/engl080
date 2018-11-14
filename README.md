@@ -1,5 +1,6 @@
 # Fact-Finding
 
+[https://fact--finding.herokuapp.com/]
 This project explores disinformation's dangers by testing whether users can spot fake and automatically-generated news headlines.
 
 ## Getting Started
