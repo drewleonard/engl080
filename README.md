@@ -10,9 +10,9 @@ This project uses `Python 3.x`. I recommend install dependencies with the [pip p
 
 ### Installation
 
-Download this project's code here:
+First, download and navigate to this project's code:
 ```
-$ git clone https://github.com/drewleonard/engl080.git
+$ git clone https://github.com/drewleonard/engl080.git && cd engl080
 ```
 Then, create a virtual environment and install dependencies:
 ```
